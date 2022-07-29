@@ -1,0 +1,50 @@
+---
+layout: default
+title: Services
+description: Service offerings.
+featured_image: /images/sitewide/social.jpg
+---
+
+<section class="intro">
+
+	<div class="wrap">
+
+		<h1>Services</h1>
+		<p>At the precipice of art and technology.</p>
+
+	</div>
+
+</section>
+
+
+<section class="service">
+
+	<div class="content-wrap service-wrap">
+
+		{% for project in site.services reversed %}
+
+		<div class="service-item">
+
+			<a class="service-item__link" href="{{ project.url | relative_url }}">
+
+				<div class="service-item__image">
+					<img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}">
+				</div>
+
+				<div class="service-item__content">
+					<div class="service-item__info">
+						<h2 class="service-item__title">{{ project.title }}</h2>
+						<p class="service-item__subtitle">{{ project.subtitle }}</p>
+						<p class="service-item__description">{{ project.description }}</p>
+					</div>
+				</div>
+
+			</a>
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+</section>
